@@ -13,7 +13,9 @@ app.use(express.json());
 const uri = process.env.MONGO_URI;
 
 // Connect to MongoDB Atlas using Mongoose
-mongoose.connect(uri) 
+mongoose.connect(uri, {
+  bufferTimeoutMS: 20000
+})
   .then(() => console.log("Successfully connected to MongoDB Atlas"))
   .catch((err) => console.error("MongoDB connection error: ", err));
 
