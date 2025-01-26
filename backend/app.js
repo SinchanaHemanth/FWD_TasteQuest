@@ -1,5 +1,5 @@
 //BOOKING backend
-
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -9,9 +9,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-
 // MongoDB Atlas connection string
-const uri = "mongodb+srv://sinchanahemanthcs23:JymvyrIDD2s8KASN@fwdcluster.1mw7z.mongodb.net/?retryWrites=true&w=majority&appName=FwdCluster";
+const uri = process.env.MONGO_URI;
 
 // Connect to MongoDB Atlas using Mongoose
 mongoose.connect(uri) 
@@ -62,8 +61,8 @@ app.post("/book", async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "tastequest2024@gmail.com",
-        pass: "yjjg eygl eehe kpbx", // use environment variables 
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS, // use environment variables 
       },
     });
   
@@ -103,14 +102,14 @@ app.post("/contact", async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "tastequest2024@gmail.com",
-        pass: "yjjg eygl eehe kpbx", // Use environment variables in production
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS, // Use environment variables in production
       },
     });
 
     const mailOptions = {
-      from: "tastequest2024@gmail.com",
-      to: "tastequest2024@gmail.com", // Replace later with admin email
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER, // Replace later with admin email
       subject: "New Contact Message",
       text: `Name: ${name}\nPhone: ${phone}\nMessage: ${message}`,
     };
@@ -130,12 +129,12 @@ app.post("/contact", async (req, res) => {
   }
 });
 
-// app.listen(5000, () => {
-//   console.log("Server running on http://localhost:5000");
-// });
-app.listen(process.env.PORT || 5000, () => {
-  console.log(`Server running on http://localhost:${process.env.PORT || 5000}`);
+app.listen(5000, () => {
+  console.log("Server running on http://localhost:5000");
 });
+// app.listen(process.env.PORT || 5000, () => {
+//   console.log(`Server running on port ${process.env.PORT || 5000}`);
+// });
 
 //for quiz
 // Add a Quiz schema to MongoDB
