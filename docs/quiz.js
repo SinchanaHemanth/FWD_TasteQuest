@@ -2,7 +2,7 @@ async function loadQuiz() {
     const quizContainer = document.getElementById("quizContainer");
 
     // Fetch quiz questions
-    const response = await fetch("http://localhost:5000/quiz");
+    const response = await fetch("https://fwd-tastequest.onrender.com/quiz");
     const questions = await response.json();
 
     // Render questions
@@ -43,7 +43,7 @@ document.getElementById("submitQuiz").addEventListener("click", async () => {
     });
 
     const userEmail = prompt("Enter your email to submit the quiz:");
-    const response = await fetch("http://localhost:5000/submit-quiz", {
+    const response = await fetch("https://fwd-tastequest.onrender.com/submit-quiz", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userEmail, answers }),

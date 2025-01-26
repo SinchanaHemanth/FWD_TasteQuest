@@ -21,7 +21,7 @@ document.getElementById("bookingForm").addEventListener("submit", async (event) 
   const responseMessage = document.getElementById("responseMessage");
 
   try {
-    const response = await fetch("http://localhost:5000/book", {
+    const response = await fetch("https://fwd-tastequest.onrender.com/book", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -85,7 +85,7 @@ async function submitContact() {
   }
 
   try {
-    const response = await fetch("http://localhost:5000/contact", {
+    const response = await fetch("https://fwd-tastequest.onrender.com/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, phone, message }),
