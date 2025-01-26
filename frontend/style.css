@@ -1,0 +1,1067 @@
+/* defining "--blue"(css variable) colour to a particular shade of blue so that it can used anywhere in css file */
+:root {
+    --blue: #2f5cf0;
+}
+
+/* * = universal selector(applies to entire html document) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*padding and border are included in total width and height that we mention*/
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /*main font and fall back font*/
+    outline: none;
+    border: none;
+    text-decoration: none;
+    /* to remove underline from links in <a> tag */
+    text-transform: capitalize; /*capitalizes first letter of every word */
+    transition: .2s linear;
+    /* smooth transition lasts for .2 seconds = for smooth animation */
+}
+
+html {
+    font-size: 62.5%;
+    /* to make 1rem = 10px */
+    scroll-behavior: smooth;
+    /*enables smooth scroll when we press on about contact etc */
+    scroll-padding-top: 4rem;
+    /*when we jump to about or review or other section, a padding of 6rem is provided so that full heading is seen and doesnt get covered by top navigation section (flower heading) */
+    overflow-x: hidden;
+    /*no horizontal scroll bar and any large image gets hidden */
+}
+
+section {
+    padding: 2rem 9%;
+    /*space around every section = 2rem for top bottom, 9% of viewpoint for right left */
+}
+
+.heading {
+    /* for headings of every section */
+    text-align: center;
+    font-size: 4rem;
+    color: #333;
+    /* dark grey */
+    padding: 1rem;
+    margin: 2rem 0;
+    background: rgba(174, 219, 247, 0.623);
+}
+
+.heading span {
+    color: var(--blue);
+}
+
+.btn {
+    /* this looks like a small button because <a> tag is inline element */
+    display: inline-block;
+    margin-top: 1rem;
+    /*spacing between button and para above */
+    margin-bottom: 1rem;
+    border-radius: 5rem;
+    /* makes it rounded like a button */
+    background: #333;
+    /* dark grey background */
+    color: #fff;
+    /* white letters */
+    padding: .9rem 3.5rem;
+    /*spacing inside the button */
+    cursor: pointer;
+    /* when we hover over it, pointer turns into hand symbol to show that it is clickable */
+    font-size: 1.6rem;
+    /*16px*/
+}
+
+.btn:hover {
+    background: var(--blue);
+    /* when mouse is brought over it, it turns pink */
+}
+
+header {
+    position: fixed;
+    /* this section can be seen all the time even when we scroll down */
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 3rem;
+    color: #333;
+    font-weight: bolder;
+}
+
+header .logo span {
+    color: var(--blue);
+}
+
+header .navbar a {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    color: #666;
+}
+
+header .navbar a:hover {
+    color: var(--blue);
+}
+
+header .icons a {
+    font-size: 2.5rem;
+    color: #333;
+    margin-left: 1.5rem;
+}
+
+header .icons a:hover {
+    color: var(--blue);
+}
+
+header #toggler {
+    display: none;
+    /*checkbox is hidden */
+}
+
+header .fa-bars {
+    font-size: 3rem;
+    color: #333;
+    border-radius: .5rem;
+    /*makes the container around the hamburger icon rounded */
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: .1rem solid rgba(0, 0, 0, .3);
+    display: none;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: url(assets/photos/home-food2.jpg);
+    background-size: cover;
+    /*ensures that the background image covers the entire section */
+    background-position: center;
+    image-rendering: crisp-edges;
+}
+
+.home .content {
+    max-width: 35rem;
+    /* so that the writing covers half the screen */
+}
+
+.home .content h3 {
+    padding-top: 7rem;
+    font-size: 6rem;
+    color: white;
+}
+
+.home .content span {
+    font-size: 2.8rem;
+    color: var(--blue);
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+.home .content p {
+    font-size: 1.5rem;
+    color: white;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+.about .row {
+    display: flex;
+    /*child elements arranged side by side by following flexbox structure*/
+    align-items: center;
+    /*vertical alignment */
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    padding-bottom: 2rem;
+}
+
+.about .row .video-container {
+    flex: 1 1 40rem;
+    /* flex grow and flex shrink value is set to 1 to allow it to allow the container to grow and flex whenever required */
+    position: relative;
+}
+
+.about .row .video-container video {
+    width: 100%;
+    border: 1.5rem solid #fff;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.3);
+    height: 100%;
+    object-fit: cover;
+    /* so that video fits into the entire container even if it has to be cropped */
+}
+
+/* for favourites page */
+.about .row .video-container img {
+    width: 100%;
+    border: 1.2rem solid #fff;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.3);
+    height: 100%;
+    object-fit: cover;
+    /* so that video fits into the entire container even if it has to be cropped */
+}
+
+/* for both about us and favourites */
+.about .row .video-container h3 {
+    position: absolute;
+    /* heading over video */
+    top: 50%;
+    /* at 50% height of video */
+    transform: translateY(-50%);
+    font-size: 3rem;
+    background: #fff;
+    width: 100%;
+    padding: .5rem 2rem;
+    text-align: center;
+    mix-blend-mode: screen;
+    /* see through letters */
+}
+
+.about .row .content {
+    flex: 1 1 40rem;
+}
+
+.about .row .content h3 {
+    font-size: 3rem;
+    color: #333;
+}
+
+.about .row .content p {
+    font-size: 1.5rem;
+    color: #999;
+    padding: .5rem 0;
+    padding-top: 1rem;
+    line-height: 1.5;
+}
+
+.icons-container {
+    background: #eee;
+    display: flex;
+    /* to use flexbox styling so that child element can be next to each other */
+    flex-wrap: wrap;
+    /* to make website responsive = goes to next line when width decreases (in mobile) */
+    gap: 1rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.icons-container .icons {
+    background: #fff;
+    border: 1rem solid rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    align-items: center;
+    flex: 1 1 25rem;
+}
+
+.icons-container .icons img {
+    height: 10rem;
+    margin-right: 5rem;
+}
+
+.icons-container .icons h3 {
+    color: #333;
+    padding-bottom: .5rem;
+    font-size: 1.5rem;
+}
+
+.icons-container .icons span {
+    color: #555;
+    font-size: 1.3rem;
+}
+
+.cities .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.cities .box-container .box {
+    flex: 1 1 30rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.1);
+    border-radius: .5rem;
+    border: .1rem solid rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.cities .box-container .box .image {
+    position: relative;
+    text-align: center;
+    padding-top: 2rem;
+    overflow: hidden;
+}
+
+.cities .box-container .box .image img {
+    height: 25rem;
+}
+
+.cities .box-container .box:hover .image img {
+    transform: scale(1.1);
+}
+
+.cities .box-container .box .content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.cities .box-container .box .content h3 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.review .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.review .box-container .box {
+    flex: 1 1 30rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.1);
+    border-radius: .5rem;
+    padding: 3rem 2rem;
+    position: relative;
+    border: .1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.review .box-container .box .fa-quote-right {
+    position: absolute;
+    bottom: 3rem;
+    right: 2rem;
+    font-size: 6rem;
+    color: #eee;
+}
+
+.review .box-container .box .stars {
+    color: var(--blue);
+    font-size: 2rem;
+}
+
+.review .box-container .box p {
+    color: #999;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding-top: 2rem;
+}
+
+.review .box-container .box .user {
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.review .box-container .box .user img {
+    height: 6rem;
+    width: 6rem;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.review .box-container .box .user h3 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.review .box-container .box .user span {
+    font-size: 1.5rem;
+    color: #999;
+}
+
+.review .btn {
+    margin-top: 4rem;
+    margin-bottom: 0;
+}
+
+/* .contact .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.9rem;
+    align-items: center;
+    padding: 2rem 15rem;
+} */
+
+/* .contact .row form {
+    flex: 1 1 40rem;
+    padding: 2rem, 2.5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+    border: .1rem solid rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: .5rem;
+} */
+
+/* .contact .row .video1 {
+    flex: 1 1 20rem;
+}
+
+.contact .row .video1 video {
+    width: 90%;
+    border: 1.5rem solid #fff;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.3);
+    height: 100%;
+    object-fit: cover;
+} */
+
+/* .contact .row form .box {
+    padding: 1rem;
+    font-size: 1.7rem;
+    color: #333;
+    text-transform: none;
+    border: .1rem solid rgba(0, 0, 0, 0.1);
+    border-radius: .5rem;
+    margin: .7rem 0;
+    width: 100%;
+} */
+
+/* .contact .row form .box:focus {
+    border-color: var(--blue);
+
+} */
+
+/* .contact .row form textarea {
+    height: 15rem;
+    resize: none;
+} */
+
+.contact .row {
+    display: flex;
+    /*child elements arranged side by side by following flexbox structure*/
+    align-items: center;
+    /*vertical alignment */
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+}
+
+.contact .row .video-container {
+    flex: 1 1 40rem;
+    /* flex grow and flex shrink value is set to 1 to allow it to allow the container to grow and flex whenever required */
+    position: relative;
+}
+
+.contact .row .video-container video {
+    width: 100%;
+    border: 1.5rem solid #fff;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.3);
+    height: 100%;
+    object-fit: cover;
+    /* so that video fits into the entire container even if it has to be cropped */
+}
+
+.contact .row .content {
+    flex: 1 1 40rem;
+}
+
+.contact .row .content h3 {
+    font-size: 3rem;
+    color: #333;
+}
+
+.contact .row .content {
+    padding: 5rem;
+}
+
+.contact .row .content p {
+    font-size: 1.5rem;
+    color: #999;
+    padding: .5rem 0;
+    padding-top: 1rem;
+    line-height: 1.5;
+}
+
+
+.footer .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-left: 2rem;
+}
+
+.footer .box-container .box {
+    flex: 1 1 25rem;
+}
+
+.footer .box-container .box h3 {
+    color: #333;
+    font-size: 2.5rem;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a {
+    display: block;
+    color: #666;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a:hover {
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+.footer .box-container .box img {
+    padding-top: 3rem;
+    width: 100%;
+}
+
+.footer .credit {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: #333;
+    border-top: .1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.footer .credit span {
+    color: var(--blue);
+}
+
+/* for cities.html */
+
+.box-container1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.box1 {
+    flex: 1 1 30rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.box-container1 .box1 .content1 {
+    padding: 1rem;
+    text-align: center;
+}
+
+.box-container1 .box1 .content1 h3 {
+    font-size: 2.5rem;
+    color: #333;
+    padding: 1rem;
+}
+
+.box-container1 .box1 .content1 h2 {
+    color: #333;
+    padding: .5rem;
+}
+
+.swiper {
+    width: 100%;
+    height: 300px;
+}
+
+.swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    color: var(--blue);
+    font-size: 2.5rem;
+}
+
+.box-container1 .box1 .book-now {
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.box-container1 .box1 .book-now:hover {
+    background-color: #0056b3;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 300px;
+    border-radius: 9px;
+    text-align: center;
+}
+
+.modal .modal-content .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-content .close:hover,
+.modal-content .close:focus {
+    color: black;
+}
+
+/* Background overlay for the modal */
+#bookingModal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Ensure it appears on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal content */
+#bookingModalContent {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animation for fading in the modal */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Modal close button */
+#closeBtn {
+    background-color: transparent;
+    border: none;
+    color: #888;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#closeBtn:hover {
+    color: #333;
+}
+
+/* Contact Us Popup Modal */
+#contactModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; /* Adjust width as needed */
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content1 {
+    background: white;
+    padding: 20px;
+    border: 3px solid black;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.close1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+}
+
+textarea, input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+    border-color: var(--blue);
+}
+
+/* .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+} */
+  
+/* Form Inputs
+input[type="date"], input[type="number"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+} */
+
+/* input[type="date"]:focus, input[type="number"]:focus, input[type="email"]:focus {
+    outline: none;
+    border-color: #4caf50; /* Green border on focus 
+} */
+
+/* Submit Button */
+button[type="submit"] {
+    background-color: #333 ;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--blue);
+} 
+
+/* Response message */
+#responseMessage {
+    font-size: 16px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#responseMessage.green {
+    color: green;
+}
+
+#responseMessage.red {
+    color: red;
+}
+
+/* quiz css */
+/* General Styles */
+.quizbody {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+/* Quiz Container Styles */
+.quiz-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 50px auto;
+}
+
+#quizContainer {
+    padding: 15px;
+    background-color: #f9f7f7cb;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.295);
+}
+
+/* Question Styles */
+.question {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.question p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.question ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.question li {
+    margin-right: 20px;
+    display: flex; /* Make each option a flexbox container */
+    align-items: center; /* Center the radio button and label vertically */
+}
+
+.question label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.question input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Submit Button Styles */
+
+
+/* Quiz Result Styles */
+.quiz-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+#quizContainer {
+    padding: 15px;
+    background-color: #f9f7f7cb;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.295);
+}
+
+/* Question Styles */
+.question {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.question p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.question ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.question li {
+    margin-right: 20px;
+}
+
+.question label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.question input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* .quiz-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+#quizContainer {
+    margin: 50px auto; 
+    max-width: 900px;
+    padding: 15px;
+    background-color: #f9f7f7cb; 
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.295);
+}
+.question {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.question p {
+    margin-bottom: 10px; 
+    font-size: 16px;
+}   */
+  /* .question {
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+  .question p {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: medium;
+} */
+/* .question ul {
+    list-style-type: none; 
+    padding-left: 0;
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+.question li {
+    margin-right: 20px; 
+}
+
+.question label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.question input[type="radio"] {
+    margin-right: 5px; 
+}*/
+
+/* #submitQuiz {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); 
+} */
+  
+  #quizResult {
+    text-align: center;
+    font-size: 18px;
+    color: green;
+    margin-top: 20px;
+    padding-bottom: 5rem;
+    font-weight: bold;
+  }   
+
+@media (max-width:991px) {
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+    .home {
+        background-position: left;
+    }
+}
+
+@media (max-width:768px) {
+    header .fa-bars {
+        display: block;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #eee;
+        border-top: .1rem solid rgba(0, 0, 0, 0.1);
+        clip-path: polygon(0 0, 100% 0, 0 0);
+    }
+
+    header #toggler:checked~.navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    header .navbar a {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background: #fff;
+        border: .1rem solid rgba(0, 0, 0, 0.1);
+        display: block;
+    }
+
+    .home .content h3 {
+        font-size: 5rem;
+    }
+
+    .home .content span {
+        font-size: 2.5rem;
+    }
+
+    .icons-container .icons h3 {
+        font-size: 2rem;
+    }
+
+    .icons-container .icons span {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width:450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .heading {
+        font-size: 3rem;
+    }
+}
