@@ -10,7 +10,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect("mongodb://127.0.0.1:27017/restaurant")
+mongoose.connect("mongodb+srv://sinchanahemanthcs23:JymvyrlDD2s8KASN@fwdcluster.1mw7z.mongodb.net/?retryWrites=true&w=majority&appName=FwdCluster")
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.error("Failed to connect to MongoDB", err));
 
@@ -126,8 +126,8 @@ app.post("/contact", async (req, res) => {
   }
 });
 
-app.listen(5000, () => {
-  console.log("Server running on http://localhost:5000");
+app.listen(process.env.PORT || 5000, () => {
+  console.log(`Server running on http://localhost:${process.env.PORT || 5000}`);
 });
 
 //for quiz
