@@ -129,12 +129,12 @@ app.post("/contact", async (req, res) => {
   }
 });
 
-app.listen(5000, () => {
-  console.log("Server running on http://localhost:5000");
-});
-// app.listen(process.env.PORT || 5000, () => {
-//   console.log(`Server running on port ${process.env.PORT || 5000}`);
+// app.listen(5000, () => {
+//   console.log("Server running on http://localhost:5000");
 // });
+app.listen(process.env.PORT || 5000, () => {
+  console.log(`Server running on port ${process.env.PORT || 5000}`);
+});
 
 //for quiz
 // Add a Quiz schema to MongoDB
