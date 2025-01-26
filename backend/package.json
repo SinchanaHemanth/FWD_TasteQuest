@@ -1,8 +1,21 @@
 {
+  "name": "fwd_project_renderingnow",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.21.1",
-    "mongoose": "^8.8.3",
-    "nodemailer": "^6.9.16"
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5",
+    "nodemailer": "^6.10.0"
   }
 }
